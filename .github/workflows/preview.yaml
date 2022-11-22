@@ -4,13 +4,13 @@ env:
   VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
   PREVIEW_URL: ""
   NEXT_PUBLIC_CMS_ENV: dev-client
-on:
-  pull_request:
-    branches-ignore:
-      - main
-      - staging
-      - dev
 
+on:
+  push:
+  pull_request:
+    branches:
+      - dev
+      - feature/*
 jobs:
   Deploy-Preview:
     runs-on: ubuntu-latest
